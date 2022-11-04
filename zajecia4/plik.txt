@@ -1,4 +1,1 @@
-1 michal pl 4
-2 tom kom 5
-3 mi ka 46
-4 wa la 2
+3
