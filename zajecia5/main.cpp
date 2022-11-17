@@ -1,9 +1,7 @@
 #include<iostream>
-#include "Ryba.h"
-#include "Ssak.h"
+#include "Ryba.cpp"
 #include "Ssak.cpp"
-#include "Ptak.h"
-#include "zwierze.h"
+#include "Ptak.cpp"
 #include "zwierze.cpp"
 using namespace std;
 
@@ -15,8 +13,9 @@ void Zwierzak::Zyj(){
 
 int main()
 {
-    Lew ssak1;
-    ssak1.Zyj();
+    Pies p1;
+
+
 
 
     return 0;

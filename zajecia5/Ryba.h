@@ -2,6 +2,7 @@
 #include "zwierze.h"
 
 class Ryba: public Zwierzak{
+public:
     void Plywaj();
 };
 

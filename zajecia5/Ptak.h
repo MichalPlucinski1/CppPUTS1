@@ -1,20 +1,20 @@
 #pragma once
 #include "zwierze.h"
 class Ptak: public Zwierzak{
+public:
     void Lataj();
-    
 };
 
 
 
-class Papuga:Ptak{
+class Papuga: public Ptak{
 
 };
 
-class Kanarek:Ptak{
+class Kanarek: public Ptak{
 
 };
 
-class Golab:Ptak{
+class Golab: public Ptak{
     
 };

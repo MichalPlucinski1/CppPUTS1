@@ -4,6 +4,7 @@
 class Ssak: public Zwierzak{
     public:
     Ssak();
+
     void Biegaj();
 
 };
@@ -13,9 +14,11 @@ public:
     Lew();
 };
 
-class Pies:Ssak{
+class Pies: public Ssak{
+public:
+    Pies();
 
 };
-class Slon:Ssak{
+class Slon: public Ssak{
 
 };
