@@ -36,7 +36,7 @@ class rezystor: public element{
         cout << "Mam U =" << napiecie << "oraz I =" << prad << endl;
         }
 
-
+// komentarz test pusha
 };
  rezystor::rezystor(){
     cout << "Podaj nazwe rezystora:";
