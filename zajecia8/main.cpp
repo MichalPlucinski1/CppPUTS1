@@ -60,6 +60,8 @@ ostream & operator<< (ostream &wyjscie, Punkt3D &s)
         z = z + arg.z;
         return *this;
     }
+
+    
 int main()
 {
     Punkt3D A(0,0,0);
@@ -71,6 +73,8 @@ int main()
     Wektor D(-1,-2,-3);
 
     A + C;
+
+
 
     C * 2;
     D * (-1);

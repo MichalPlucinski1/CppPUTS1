@@ -9,6 +9,7 @@ class element{
     int napiecie;
     public:
     virtual void wymuszenie(int, int) = 0;
+    
     friend int obwod(element* arg1, element* arg2)
     {
         if(arg1->prad == arg2->prad)
@@ -88,11 +89,17 @@ kondensator::kondensator(){
 
 
 
+
+
 int main()
 {
     const int rozmiar = 3;
     element* tab[3];
-    tab[0] = new cewka;
+
+
+
+
+    tab[0] = new cewka; 
     tab[0]->wymuszenie(1,1);
     tab[1] = new rezystor;
     tab[1]->wymuszenie(2,1);
