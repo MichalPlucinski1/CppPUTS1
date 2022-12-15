@@ -1,5 +1,6 @@
 #include <iostream>
 #include<fstream>
+using namespace std;
 void NazwaKlasy::MetodaDane()
    {
     cout << endl << "Podaj imie: ";
