@@ -42,7 +42,7 @@ class rezystor: public element{
  rezystor::rezystor(){
     cout << "Podaj nazwe rezystora:";
     cin >>this->nazwa;
-    cout <<"Podaj  rezystancje:";
+    cout <<"Podaj rezystancje:";
     cin >> this->rezystancja;
 }
 

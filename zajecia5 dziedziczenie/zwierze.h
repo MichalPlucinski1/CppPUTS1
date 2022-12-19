@@ -12,6 +12,9 @@ class Zwierzak{
     void Oddychaj();  
     void Zyj();
     void ShowStats();
+    int get_Wiek(){return Wiek;}
+    void set_Wiek(int _wiek){Wiek = _wiek;}
+
     Zwierzak();
     Zwierzak(string,int,float);
     protected:
@@ -24,3 +27,5 @@ class Zwierzak{
     char Plec;
 
 };
+
+
