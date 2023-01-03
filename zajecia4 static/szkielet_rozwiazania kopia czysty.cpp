@@ -45,7 +45,7 @@ int main()
 {
     string temp;
     ifstream wejscie("plik2.txt");
-    getline(wejscie,temp);
+    //getline(wejscie,temp);
     osoba::id_ostatniego=atoi(temp.c_str());
     osoba::aktualnie_w_systemie=0;
 

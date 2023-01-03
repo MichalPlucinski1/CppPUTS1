@@ -1,0 +1,6 @@
+﻿  MyForm.cpp
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\MyForm.h(437,1): warning C4965: niejawne rzutowanie liczby całkowitej 0; użyj nullptr lub jawnego rzutowania
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\MyForm.cpp(6,1): warning C4829: Możliwe niepoprawne parametry funkcji main. Rozważ użycie "int main(Platform::Array<Platform::String^>^ argv)"
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\MyForm.cpp(7,15): warning C4551: wywołaniu funkcji brakuje listy argumentów
+  MyForm.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
+  kalkulator.vcxproj -> D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.exe

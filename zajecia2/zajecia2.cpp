@@ -3,6 +3,7 @@
 
 using namespace std;
 
+class klasa{};
 
 struct Kontakty
 {
@@ -10,6 +11,7 @@ string imie;
 string nazwisko;
 int wiek;
 string telefon;
+klasa k;
 };
 
 const int rozmiar = 2;
@@ -37,6 +39,7 @@ void WprowadzTelefon(int nr)
     cout << "Podaj telefon: ";
     cin >> Tablica[nr].telefon;
 }
+
 
 
 

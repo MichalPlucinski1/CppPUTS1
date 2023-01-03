@@ -1,0 +1,4 @@
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxproj.AssemblyReference.cache
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.MyForm.resources
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxproj.GenerateResource.cache
+D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.exe
