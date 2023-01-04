@@ -97,8 +97,6 @@ int main()
     element* tab[3];
 
 
-
-
     tab[0] = new cewka; 
     tab[0]->wymuszenie(1,1);
     tab[1] = new rezystor;

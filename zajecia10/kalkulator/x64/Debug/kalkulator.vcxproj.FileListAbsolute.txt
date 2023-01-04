@@ -2,3 +2,7 @@ D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxp
 D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.MyForm.resources
 D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxproj.GenerateResource.cache
 D:\polibuda\podstawy inf\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.exe
+E:\programowanie\cpp szkola\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxproj.AssemblyReference.cache
+E:\programowanie\cpp szkola\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.MyForm.resources
+E:\programowanie\cpp szkola\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.vcxproj.GenerateResource.cache
+E:\programowanie\cpp szkola\CppPUTS1\zajecia10\kalkulator\x64\Debug\kalkulator.exe
