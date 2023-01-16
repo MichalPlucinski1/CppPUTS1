@@ -1,0 +1,5 @@
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.vcxproj.AssemblyReference.cache
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.LoginForm.resources
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.vcxproj.GenerateResource.cache
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.exe
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.MainForm.resources
