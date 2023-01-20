@@ -48,6 +48,7 @@ namespace Notatnik2 {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Label^ label4;
 
 	private:
 		/// <summary>
@@ -70,12 +71,14 @@ namespace Notatnik2 {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
 			this->panel1->BackColor = System::Drawing::SystemColors::ActiveCaption;
+			this->panel1->Controls->Add(this->label4);
 			this->panel1->Controls->Add(this->btnExit);
 			this->panel1->Controls->Add(this->btnLogin);
 			this->panel1->Controls->Add(this->tbPassword);
@@ -161,6 +164,15 @@ namespace Notatnik2 {
 			this->label1->Size = System::Drawing::Size(258, 55);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Logowanie";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(70, 112);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(103, 13);
+			this->label4->TabIndex = 7;
+			this->label4->Text = L"Login: a haslo: 2134";
 			// 
 			// LoginForm
 			// 

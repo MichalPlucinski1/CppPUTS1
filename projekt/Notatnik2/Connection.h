@@ -1,4 +1,5 @@
 #pragma once
+#include <msclr\marshal_cppstd.h>
 
 #include "mysql_connection.h"
 #include <cppconn/driver.h>

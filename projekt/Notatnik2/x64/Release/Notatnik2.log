@@ -1,56 +1,37 @@
 ﻿  LoginForm.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(98,9): error C2371: 'IServiceProvider': redefinition; different basic types
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(44): message : see declaration of 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): message : compiler replacing '*' with '^' to continue parsing
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(186,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(11): message : see declaration of 'Connection'
-  MainForm.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(98,9): error C2371: 'IServiceProvider': redefinition; different basic types
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(44): message : see declaration of 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): message : compiler replacing '*' with '^' to continue parsing
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(19,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(11): message : see declaration of 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(198,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
   Program.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(91,81): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(98,9): error C2371: 'IServiceProvider': redefinition; different basic types
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(44): message : see declaration of 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(115,47): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(239,28): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\servprov.h(249,38): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6870,70): message : compiler replacing '*' with '^' to continue parsing
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): error C3699: '*': cannot use this indirection on type 'IServiceProvider'
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\urlmon.h(6872,66): message : compiler replacing '*' with '^' to continue parsing
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(186,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(11): message : see declaration of 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(198,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(19,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(11): message : see declaration of 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(245,19): warning C4101: 'error': unreferenced local variable
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Program.cpp(7,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Program.cpp(8,15): warning C4551: function call missing argument list
   Generating Code...
+  LoginForm.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+     Creating library E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.lib and object E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.exp
+mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_native_resultset_wrapper.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_native_statement_wrapper.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_native_connection_wrapper.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_native_driver_wrapper.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_client_api.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_client_api.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_uri.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_uri.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_warning.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_warning.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_util.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_util.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_statement.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_statement.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultset_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_resultset_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultset.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_resultset.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_resultbind.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_resultbind.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_ps_resultset.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_ps_resultset.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_parameter_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_parameter_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_driver.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_debug.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_debug.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_connection.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_art_rset_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_art_rset_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_art_resultset.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_art_resultset.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
+  Notatnik2.vcxproj -> E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\Notatnik2.exe
