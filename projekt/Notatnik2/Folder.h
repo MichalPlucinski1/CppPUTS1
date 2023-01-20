@@ -5,7 +5,7 @@ public ref class Folder {
 public:
 	String^ nazwa;
 	int^ id;
-	int^ previous;
+	static int previous;
 	int^ ownerId;
 	String^ CreationDate;
 	int isPublic;

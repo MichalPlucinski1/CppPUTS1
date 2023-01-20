@@ -23,6 +23,7 @@ namespace Notatnik2 {
 		MainForm(Connection^ _con)
 		{
 			con = _con;
+			folder->previous = 0;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -30,7 +31,7 @@ namespace Notatnik2 {
 			
 			lbUser->Text = "ID= " + con->user->id + ",name= " + con->user->imie + ", nazwisko= " + con->user->nazwisko + ", email= " + con->user->email;
 			LoadNotes();
-			fillComboFolders();
+			fillComboFolders(0); //glowny folder id=0
 			
 			
 		}
@@ -394,8 +395,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		String^ content = this->rtbMainPrivateNote->Text;
 
-		if (!(con->UpdateMainNoteContent(con->user->id, content)))
-		{
+		if (!(con->UpdateMainNoteContent(con->user->id, content))){
 			MessageBox::Show("Wyskoczyl blad, ale zaufaj mi, dziala");
 		}
 		LoadNotes();
@@ -403,16 +403,26 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 }
-	   private: void fillComboFolders() {
-		   
-		   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id FROM `Folders` WHERE Owner_Id = "+ con->user->id+ " or Owner_Id is null "));
+	   private: void fillComboFolders(int id) {
+		   this->lbFolderBox->Items->Clear();
+
+		   if (id == 0){
+			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id FROM `Folders` WHERE  (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous is null;"));
+		   }
+		   else {
+			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id, Previous FROM `Folders` WHERE (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous =" + id + " ;"));
+			   this->lbFolderBox->Items->Add("..");
+		   }
 		   while (con->res->next()) {
 			   folder->nazwa = Conversion::std2cli(con->res->getString("Name"));
 			   folder->isPublic =(con->res->getInt("IsPublic"));
+			   folder->id = con->res->getInt("Id");
+			   folder->previous = con->res->getInt("Previous"); // to nie dzia³A
 			   String^ fPublic = "Prywatny";
 			   if (folder->isPublic == 1)
 				   fPublic = "Publiczny";
-			   this->lbFolderBox->Items->Add(folder->nazwa+","+ fPublic);
+			   
+			   this->lbFolderBox->Items->Add(folder->id + " " + folder->nazwa + "," + fPublic);
 			   
 			   // You can use either numeric offsets...
 			   //cout << "id = " << res->getInt(1); // getInt(1) returns the first column
@@ -423,6 +433,21 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	   }
 private: System::Void lbFolderBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	String^ Item =  this->lbFolderBox->SelectedItem->ToString();
+	
+	std::string num = Conversion::cli2std(Item->Substring(0, 2));
+	if (num == "..")
+	{
+		fillComboFolders(folder->previous);
+	}
+	else
+	{
+		int _nb = stoi(num);
+		int^ nb = _nb;
+		//MessageBox::Show(Conversion::std2cli(num));
+
+		fillComboFolders(_nb);
+	}
 	
 }
 };
