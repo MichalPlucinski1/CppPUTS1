@@ -15,31 +15,38 @@ namespace Notatnik2 {
 	/// </summary>
 	public ref class MainForm : public System::Windows::Forms::Form
 	{
+		public: Connection^ con;
+
 	public:
 		MainForm(Connection^ _con)
 		{
-			Connection^ con = _con;
+			con = _con;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 			
 			lbUser->Text = "ID= " + con->user->id + ",name= " + con->user->imie + ", nazwisko= " + con->user->nazwisko + ", email= " + con->user->email;
+			LoadNotes();
+			
+			
+		}
+
+		void LoadNotes() {
 			try {
 				Note^ MainPublicNote = con->GetMainNote(0);
 				rtbMainPublicNote->Text = MainPublicNote->zawartosc;
 			}
-			catch (...){
-				MessageBox::Show("B³¹d pobierania publicznej notatki g³ównej");
+			catch (...) {
+				MessageBox::Show("Blad pobierania publicznej notatki glownej");
 			}
 			try {
-			Note^ MainPrivateNote = con->GetMainNote(1);
-			rtbMainPrivateNote->Text = MainPrivateNote->zawartosc;
+				Note^ MainPrivateNote = con->GetMainNote(1);
+				rtbMainPrivateNote->Text = MainPrivateNote->zawartosc;
 			}
 			catch (...) {
-				MessageBox::Show("B³¹d pobierania prywatnej notatki g³ównej");
+				MessageBox::Show("Blad pobierania prywatnej notatki glownej");
 			}
-			
 		}
 
 	protected:
@@ -140,6 +147,7 @@ namespace Notatnik2 {
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Wyczyœæ";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
 			// btnEditPublicNote
 			// 
@@ -185,6 +193,7 @@ namespace Notatnik2 {
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Wyczyœæ";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MainForm::button2_Click);
 			// 
 			// button3
 			// 
@@ -226,7 +235,6 @@ namespace Notatnik2 {
 		}
 #pragma endregion
 	
-	//public: Connection^ con;
 	private: System::Void btnEditPublicNote_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (
 			MessageBox::Show(
@@ -237,16 +245,39 @@ namespace Notatnik2 {
 			) == System::Windows::Forms::DialogResult::Yes)
 		{
 			String^ content = this->rtbMainPublicNote->Text;
-			try {
-				//Connection^ con1 = gcnew Connection();
-
-				//con1->UpdateNoteContent(0, content);
-			}
-			catch (String^ error)
+			
+			if(!(con->UpdateMainNoteContent(0, content)))
 			{
-
+				MessageBox::Show("Wyskoczyl blad, ale zaufaj mi, dziala");
 			}
+			LoadNotes();
+
+			
 		}
 	}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (
+		MessageBox::Show(
+			L"Are you sure you want to do this?",
+			L"Continue?",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Exclamation
+		) == System::Windows::Forms::DialogResult::Yes)
+	{
+		this->rtbMainPrivateNote->Text = "";
+	}
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (
+		MessageBox::Show(
+			L"Are you sure you want to do this?",
+			L"Continue?",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Exclamation
+		) == System::Windows::Forms::DialogResult::Yes)
+	{
+		this->rtbMainPublicNote->Text = "";
+	}
+}
 };
 }

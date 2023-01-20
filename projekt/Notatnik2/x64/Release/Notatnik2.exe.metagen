@@ -33,3 +33,7 @@ Class Notatnik2.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
 Class Notatnik2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Connection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Connection con : Public
+  Methods:
+    LoadNotes(): PrivateScope, Public, HideBySig

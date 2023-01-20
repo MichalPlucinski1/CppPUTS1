@@ -1,12 +1,18 @@
 ﻿  LoginForm.cpp
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(198,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
+  MainForm.cpp
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(18,26): warning C4677: 'con': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(21,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
   Program.cpp
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\LoginForm.h(198,26): warning C4677: 'con1': signature of non-private member contains assembly private type 'Connection'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(19,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(18,26): warning C4677: 'con': signature of non-private member contains assembly private type 'Connection'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
-E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(245,19): warning C4101: 'error': unreferenced local variable
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\MainForm.h(21,11): warning C4677: 'MainForm': signature of non-private member contains assembly private type 'Connection'
+E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Connection.h(12): message : see declaration of 'Connection'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Program.cpp(7,1): warning C4829: Possibly incorrect parameters to function main. Consider 'int main(Platform::Array<Platform::String^>^ argv)'
 E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\Program.cpp(8,15): warning C4551: function call missing argument list
   Generating Code...
@@ -28,7 +34,7 @@ mysqlcppconn-static.lib(mysql_ps_resultset_metadata.obj) : warning LNK4099: PDB 
 mysqlcppconn-static.lib(mysql_ps_resultset.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_ps_resultset.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_prepared_statement.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_prepared_statement.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_parameter_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_parameter_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
-mysqlcppconn-static.lib(mysql_metadata.obj) : warning LNK4099: PDB '' was not found with 'mysqlcppconn-static.lib(mysql_metadata.obj)' or at ''; linking object as if no debug info
+mysqlcppconn-static.lib(mysql_metadata.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_metadata.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_driver.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_driver.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_debug.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_debug.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info
 mysqlcppconn-static.lib(mysql_connection.obj) : warning LNK4099: PDB 'jdbc.pdb' was not found with 'mysqlcppconn-static.lib(mysql_connection.obj)' or at 'E:\programowanie\cpp szkola\CppPUTS1\projekt\Notatnik2\x64\Release\jdbc.pdb'; linking object as if no debug info

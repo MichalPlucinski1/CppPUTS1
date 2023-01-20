@@ -1,12 +1,12 @@
 #pragma once
 #include <msclr\marshal_cppstd.h>
-
 #include "mysql_connection.h"
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/prepared_statement.h>
 #include "User.h"
 #include "Note.h"
+#include "Conversions.h"
 
 using namespace System;
 ref class Connection
@@ -35,9 +35,9 @@ public:
         String^ error = "";
         try {
 
-        
-            std::string email = msclr::interop::marshal_as<std::string>(_email);
-            std::string haslo = msclr::interop::marshal_as<std::string>(_haslo);
+            
+            std::string email = Conversion::cli2std(_email);
+            std::string haslo = Conversion::cli2std(_haslo);
 
             res = stmt->executeQuery("SELECT Id, Email, Name, Surname, Password from Users where Email = \'" + email + "\'");
             if (res->next())
@@ -110,16 +110,38 @@ public:
 
     }
 
-    void UpdateNoteContent(int type, String^ _content) {
-        std::string content;
-        //MarshalString(_content, content);
-        if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 1  "))
+    bool  UpdateMainNoteContent(int user_id, String^ _content) {
+        
+        std::string content = Conversion::cli2std(_content);
+        stmt = con->createStatement();
+        if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 1; "))
         {
-            return;
+            return true;
         }
-        else {
-            throw"Cannot update shiet";
+        return false;
+       
+        /*
+        if (user_id == 0)
+        {
+            if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`User_Id` = NULL  "))
+            {
+                return;
+            }
+            else {
+                throw"Cannot update shiet";
+            }
         }
+        else
+        {
+            if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 2  "))
+            {
+                return;
+            }
+            else {
+                throw"Cannot update shiet";
+            }
+        }
+        */
 
     }
     
