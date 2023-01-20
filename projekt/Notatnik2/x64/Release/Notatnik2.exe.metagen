@@ -30,10 +30,20 @@ Class Notatnik2.LoginForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Connection con1 : Public
+Class Folder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String nazwa : Public
+    System.ValueType id Int32 IsBoxed : Public
+    System.ValueType previous Int32 IsBoxed : Public
+    System.ValueType ownerId Int32 IsBoxed : Public
+    System.String CreationDate : Public
+    Int32 isPublic : Public
 Class Notatnik2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Connection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     Connection con : Public
+    Folder folder : Public
   Methods:
     LoadNotes(): PrivateScope, Public, HideBySig

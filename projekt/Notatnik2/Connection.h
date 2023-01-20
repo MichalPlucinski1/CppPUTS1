@@ -11,13 +11,14 @@
 using namespace System;
 ref class Connection
 {
+public:
     sql::Driver* driver;
     sql::Connection* con;
     sql::Statement* stmt;
     sql::PreparedStatement* pstmt;
     sql::ResultSet* res;
     
-public:
+
 
     User^ user;
     Connection() {
@@ -111,14 +112,28 @@ public:
     }
 
     bool  UpdateMainNoteContent(int user_id, String^ _content) {
-        
         std::string content = Conversion::cli2std(_content);
         stmt = con->createStatement();
-        if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 1; "))
+        std::string id = std::to_string(user_id);
+        if (user_id == 0)
         {
-            return true;
+            if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 1; "))
+            {
+                return true;
+            }
+            return false;
         }
-        return false;
+
+        else
+        {
+
+            if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`User_Id` = " + id + "; "))
+            {
+                return true;
+            }
+            return false;
+        }
+       
        
         /*
         if (user_id == 0)
@@ -145,5 +160,7 @@ public:
 
     }
     
+
+
 };
 
