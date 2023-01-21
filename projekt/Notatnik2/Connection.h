@@ -17,6 +17,7 @@ public:
     sql::Statement* stmt;
     sql::PreparedStatement* pstmt;
     sql::ResultSet* res;
+    sql::ResultSet* res2;
     
 
 

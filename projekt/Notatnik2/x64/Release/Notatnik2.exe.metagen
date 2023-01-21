@@ -34,11 +34,12 @@ Class Folder: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Fields:
     System.String nazwa : Public
-    System.ValueType id Int32 IsBoxed : Public
+    Int32 id : Public
+    Int32 previous : Public
+    Int32 current : Public
     System.ValueType ownerId Int32 IsBoxed : Public
     System.String CreationDate : Public
     Int32 isPublic : Public
-    Int32 previous : Public, Static
 Class Notatnik2.MainForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(Connection): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName

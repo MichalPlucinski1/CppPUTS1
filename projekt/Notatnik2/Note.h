@@ -18,8 +18,8 @@ public:
 	
 	String^ Nazwa;
 	int id_Folder;
-	bool is_Important;
+	int is_Important;
 	String^ CreationDate;
-	bool is_Public;
+	int is_Public;
 
 };

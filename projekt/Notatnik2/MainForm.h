@@ -22,20 +22,23 @@ namespace Notatnik2 {
 	public:
 		MainForm(Connection^ _con)
 		{
-			con = _con;
-			folder->previous = 0;
+			
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+			con = _con;
 			
 			lbUser->Text = "ID= " + con->user->id + ",name= " + con->user->imie + ", nazwisko= " + con->user->nazwisko + ", email= " + con->user->email;
+			
 			LoadNotes();
+	
 			fillComboFolders(0); //glowny folder id=0
 			
 			
+			
 		}
-
+		
 		void LoadNotes() {
 			try {
 				Note^ MainPublicNote = con->GetMainNote(0);
@@ -52,7 +55,7 @@ namespace Notatnik2 {
 				MessageBox::Show("Blad pobierania prywatnej notatki glownej");
 			}
 		}
-
+		
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -81,7 +84,8 @@ namespace Notatnik2 {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::RichTextBox^ richTextBox1;
 	private: System::Windows::Forms::GroupBox^ groupBox4;
-	private: System::Windows::Forms::ListBox^ listBox2;
+	private: System::Windows::Forms::ListBox^ lbNotesBox;
+
 
 
 
@@ -119,7 +123,7 @@ namespace Notatnik2 {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->lbNotesBox = (gcnew System::Windows::Forms::ListBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
@@ -247,7 +251,7 @@ namespace Notatnik2 {
 			this->lbFolderBox->ItemHeight = 18;
 			this->lbFolderBox->Location = System::Drawing::Point(26, 23);
 			this->lbFolderBox->Name = L"lbFolderBox";
-			this->lbFolderBox->Size = System::Drawing::Size(233, 76);
+			this->lbFolderBox->Size = System::Drawing::Size(278, 76);
 			this->lbFolderBox->TabIndex = 4;
 			this->lbFolderBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::lbFolderBox_SelectedIndexChanged);
 			// 
@@ -258,7 +262,7 @@ namespace Notatnik2 {
 			this->groupBox3->Controls->Add(this->richTextBox1);
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox3->Location = System::Drawing::Point(384, 465);
+			this->groupBox3->Location = System::Drawing::Point(420, 465);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Size = System::Drawing::Size(290, 214);
 			this->groupBox3->TabIndex = 3;
@@ -297,25 +301,25 @@ namespace Notatnik2 {
 			// 
 			// groupBox4
 			// 
-			this->groupBox4->Controls->Add(this->listBox2);
+			this->groupBox4->Controls->Add(this->lbNotesBox);
 			this->groupBox4->Controls->Add(this->lbFolderBox);
 			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
 			this->groupBox4->Location = System::Drawing::Point(55, 465);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Size = System::Drawing::Size(290, 282);
+			this->groupBox4->Size = System::Drawing::Size(328, 282);
 			this->groupBox4->TabIndex = 4;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Folder";
 			// 
-			// listBox2
+			// lbNotesBox
 			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 18;
-			this->listBox2->Location = System::Drawing::Point(26, 140);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(233, 94);
-			this->listBox2->TabIndex = 5;
+			this->lbNotesBox->FormattingEnabled = true;
+			this->lbNotesBox->ItemHeight = 18;
+			this->lbNotesBox->Location = System::Drawing::Point(26, 140);
+			this->lbNotesBox->Name = L"lbNotesBox";
+			this->lbNotesBox->Size = System::Drawing::Size(278, 94);
+			this->lbNotesBox->TabIndex = 5;
 			// 
 			// MainForm
 			// 
@@ -385,6 +389,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	if (
 		MessageBox::Show(
 			L"Are you sure you want to do this?",
@@ -394,7 +399,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		) == System::Windows::Forms::DialogResult::Yes)
 	{
 		String^ content = this->rtbMainPrivateNote->Text;
-
+		
 		if (!(con->UpdateMainNoteContent(con->user->id, content))){
 			MessageBox::Show("Wyskoczyl blad, ale zaufaj mi, dziala");
 		}
@@ -403,21 +408,37 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 }
-	   private: void fillComboFolders(int id) {
-		   this->lbFolderBox->Items->Clear();
 
+	   private: void fillComboFolders(int id) {
+		  
+		   this->lbFolderBox->Items->Clear();
+		   
 		   if (id == 0){
+			   this->groupBox4->Text = "Folder g³ówny";
 			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id FROM `Folders` WHERE  (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous is null;"));
+			   folder->previous = 0;
 		   }
 		   else {
-			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id, Previous FROM `Folders` WHERE (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous =" + id + " ;"));
+			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Name FROM `Folders` WHERE Id = "+ folder->current+";"));
+			   con->res->next();
+			   folder->nazwa = Conversion::std2cli(con->res->getString("Name"));
+			   this->groupBox4->Text = folder->nazwa;
+
+			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id, CAST(if(Previous is null, 0, Previous)as signed) as Previous FROM `Folders` WHERE (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous =" + folder->current + ";"));
+			  
+			   this->lbFolderBox->Items->Add("/.");
 			   this->lbFolderBox->Items->Add("..");
+			   
+			   
 		   }
 		   while (con->res->next()) {
+			   
+			   //folder->previous = con->res->getInt("Previous");
 			   folder->nazwa = Conversion::std2cli(con->res->getString("Name"));
 			   folder->isPublic =(con->res->getInt("IsPublic"));
+			  
 			   folder->id = con->res->getInt("Id");
-			   folder->previous = con->res->getInt("Previous"); // to nie dzia³A
+			  //folder->previous = con->res->getInt("Previous"); // to nie dzia³A
 			   String^ fPublic = "Prywatny";
 			   if (folder->isPublic == 1)
 				   fPublic = "Publiczny";
@@ -429,23 +450,61 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			   // ... or column names for accessing results.
 			   // The latter is recommended.
 			   //cout << ", label = '" << res->getString("label") << "'" << endl;
+			   
 		   }
-
+		   fillComboNotes(id);
 	   }
+
+		private: void fillComboNotes(int id) {
+			
+			this->lbNotesBox->Items->Clear();
+			if (id == 0)
+			{
+				std::string _id = std::to_string(con->user->id);
+
+				//MessageBox::Show(Conversion::std2cli(_id));
+				con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, nazwa, content, IsPublic, IsImportant FROM Notes WHERE folder_id IS NULL AND(User_Id = " + con->user->id + " OR  User_Id IS NULL);"));
+
+			}
+			else
+			{
+				//con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id nazwa, content, IsPublic, IsImportant FROM Notes WHERE folder_id ="+folder->current+" AND(User_Id = " + con->user->id + " OR user_id IS NULL)"));
+			}
+			
+			StandardNote^ note = gcnew StandardNote();
+			while (con->res->next()) {
+				note->id = con->res->getInt("Id");
+				note->Nazwa = Conversion::std2cli(con->res->getString("nazwa"));
+				//MessageBox::Show(note->Nazwa);
+				note->zawartosc = Conversion::std2cli(con->res->getString("content"));
+				note->is_Public = con->res->getInt("IsPublic");
+				String^ _public = note->is_Public == 1 ? "publiczna" : "prywatna";
+				note->is_Important = con->res->getInt("IsImportant");
+				this->lbNotesBox->Items->Add(note->Nazwa + " " + _public); // + "," + note->is_Public ? "publiczna": "prywatna"
+			}
+			
+		}
+
 private: System::Void lbFolderBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	
 	String^ Item =  this->lbFolderBox->SelectedItem->ToString();
 	
 	std::string num = Conversion::cli2std(Item->Substring(0, 2));
 	if (num == "..")
 	{
-		fillComboFolders(folder->previous);
+		//fillComboFolders(folder->previous);
+		MessageBox::Show("przepraszamy, funkcja jeszcze nie dzia³a", "b³¹d");
+	}
+	else if (num == "/.")
+	{
+		fillComboFolders(0);
 	}
 	else
 	{
-		int _nb = stoi(num);
-		int^ nb = _nb;
 		//MessageBox::Show(Conversion::std2cli(num));
-
+		int _nb = stoi(num);
+		//MessageBox::Show(Conversion::std2cli(num));
+		folder->current = _nb;
 		fillComboFolders(_nb);
 	}
 	

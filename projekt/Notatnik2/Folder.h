@@ -4,8 +4,9 @@ using namespace System;
 public ref class Folder {
 public:
 	String^ nazwa;
-	int^ id;
-	static int previous;
+	int id;
+	int previous;
+	int current;
 	int^ ownerId;
 	String^ CreationDate;
 	int isPublic;
