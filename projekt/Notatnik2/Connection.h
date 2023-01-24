@@ -20,7 +20,6 @@ public:
     sql::ResultSet* res2;
     
 
-
     User^ user;
     Connection() {
         driver = get_driver_instance();
@@ -116,6 +115,7 @@ public:
         std::string content = Conversion::cli2std(_content);
         stmt = con->createStatement();
         std::string id = std::to_string(user_id);
+        
         if (user_id == 0)
         {
             if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = 1; "))
@@ -127,14 +127,12 @@ public:
 
         else
         {
-
             if (stmt->execute("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`User_Id` = " + id + "; "))
             {
                 return true;
             }
             return false;
         }
-       
        
         /*
         if (user_id == 0)
@@ -161,7 +159,7 @@ public:
 
     }
     
-
+    
 
 };
 

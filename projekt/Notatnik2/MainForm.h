@@ -78,11 +78,14 @@ namespace Notatnik2 {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::RichTextBox^ rtbMainPrivateNote;
 	private: System::Windows::Forms::ListBox^ lbFolderBox;
+	private: System::Windows::Forms::GroupBox^ gbNote;
 
-	private: System::Windows::Forms::GroupBox^ groupBox3;
+
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button5;
-	private: System::Windows::Forms::RichTextBox^ richTextBox1;
+	private: System::Windows::Forms::RichTextBox^ rtbNote;
+
+
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::ListBox^ lbNotesBox;
 
@@ -118,15 +121,15 @@ namespace Notatnik2 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->rtbMainPrivateNote = (gcnew System::Windows::Forms::RichTextBox());
 			this->lbFolderBox = (gcnew System::Windows::Forms::ListBox());
-			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->gbNote = (gcnew System::Windows::Forms::GroupBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->richTextBox1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->rtbNote = (gcnew System::Windows::Forms::RichTextBox());
 			this->groupBox4 = (gcnew System::Windows::Forms::GroupBox());
 			this->lbNotesBox = (gcnew System::Windows::Forms::ListBox());
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
-			this->groupBox3->SuspendLayout();
+			this->gbNote->SuspendLayout();
 			this->groupBox4->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -255,19 +258,19 @@ namespace Notatnik2 {
 			this->lbFolderBox->TabIndex = 4;
 			this->lbFolderBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::lbFolderBox_SelectedIndexChanged);
 			// 
-			// groupBox3
+			// gbNote
 			// 
-			this->groupBox3->Controls->Add(this->button4);
-			this->groupBox3->Controls->Add(this->button5);
-			this->groupBox3->Controls->Add(this->richTextBox1);
-			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->gbNote->Controls->Add(this->button4);
+			this->gbNote->Controls->Add(this->button5);
+			this->gbNote->Controls->Add(this->rtbNote);
+			this->gbNote->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->groupBox3->Location = System::Drawing::Point(420, 465);
-			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(290, 214);
-			this->groupBox3->TabIndex = 3;
-			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Wybrana Notatka";
+			this->gbNote->Location = System::Drawing::Point(420, 465);
+			this->gbNote->Name = L"gbNote";
+			this->gbNote->Size = System::Drawing::Size(290, 214);
+			this->gbNote->TabIndex = 3;
+			this->gbNote->TabStop = false;
+			this->gbNote->Text = L"Wybrana Notatka";
 			// 
 			// button4
 			// 
@@ -277,6 +280,7 @@ namespace Notatnik2 {
 			this->button4->TabIndex = 2;
 			this->button4->Text = L"Wyczyœæ";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &MainForm::button4_Click);
 			// 
 			// button5
 			// 
@@ -286,18 +290,19 @@ namespace Notatnik2 {
 			this->button5->TabIndex = 1;
 			this->button5->Text = L"ZatwierdŸ zmiane";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &MainForm::button5_Click);
 			// 
-			// richTextBox1
+			// rtbNote
 			// 
-			this->richTextBox1->BackColor = System::Drawing::SystemColors::WindowFrame;
-			this->richTextBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->rtbNote->BackColor = System::Drawing::SystemColors::WindowFrame;
+			this->rtbNote->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(238)));
-			this->richTextBox1->ForeColor = System::Drawing::Color::Cornsilk;
-			this->richTextBox1->Location = System::Drawing::Point(20, 24);
-			this->richTextBox1->Name = L"richTextBox1";
-			this->richTextBox1->Size = System::Drawing::Size(249, 110);
-			this->richTextBox1->TabIndex = 0;
-			this->richTextBox1->Text = L"";
+			this->rtbNote->ForeColor = System::Drawing::Color::Cornsilk;
+			this->rtbNote->Location = System::Drawing::Point(20, 24);
+			this->rtbNote->Name = L"rtbNote";
+			this->rtbNote->Size = System::Drawing::Size(249, 110);
+			this->rtbNote->TabIndex = 0;
+			this->rtbNote->Text = L"";
 			// 
 			// groupBox4
 			// 
@@ -320,6 +325,7 @@ namespace Notatnik2 {
 			this->lbNotesBox->Name = L"lbNotesBox";
 			this->lbNotesBox->Size = System::Drawing::Size(278, 94);
 			this->lbNotesBox->TabIndex = 5;
+			this->lbNotesBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::lbNotesBox_SelectedIndexChanged);
 			// 
 			// MainForm
 			// 
@@ -328,7 +334,7 @@ namespace Notatnik2 {
 			this->BackColor = System::Drawing::SystemColors::Highlight;
 			this->ClientSize = System::Drawing::Size(755, 752);
 			this->Controls->Add(this->groupBox4);
-			this->Controls->Add(this->groupBox3);
+			this->Controls->Add(this->gbNote);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->lbUser);
@@ -337,7 +343,7 @@ namespace Notatnik2 {
 			this->Text = L"MainForm";
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox2->ResumeLayout(false);
-			this->groupBox3->ResumeLayout(false);
+			this->gbNote->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -345,6 +351,7 @@ namespace Notatnik2 {
 #pragma endregion
 	
 	private: System::Void btnEditPublicNote_Click(System::Object^ sender, System::EventArgs^ e) {
+		
 		if (
 			MessageBox::Show(
 				L"Are you sure you want to do this?",
@@ -363,6 +370,7 @@ namespace Notatnik2 {
 
 			
 		}
+		
 	}
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (
@@ -405,17 +413,18 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 		}
 		LoadNotes();
 
-
+		
 	}
+	
 }
-
+	   //filling selector with folders
 	   private: void fillComboFolders(int id) {
 		  
 		   this->lbFolderBox->Items->Clear();
 		   
 		   if (id == 0){
 			   this->groupBox4->Text = "Folder g³ówny";
-			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id FROM `Folders` WHERE  (Owner_Id = " + con->user->id + " or Owner_Id is null) and Previous is null;"));
+			   con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, Name, IsPublic, Owner_Id FROM `Folders` WHERE  (Owner_Id = " + con->user->id +" or Owner_Id is null) and Previous is null;"));
 			   folder->previous = 0;
 		   }
 		   else {
@@ -453,8 +462,9 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			   
 		   }
 		   fillComboNotes(id);
+		   
 	   }
-
+		// filling selector with notes
 		private: void fillComboNotes(int id) {
 			
 			this->lbNotesBox->Items->Clear();
@@ -468,7 +478,8 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 			}
 			else
 			{
-				//con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id nazwa, content, IsPublic, IsImportant FROM Notes WHERE folder_id ="+folder->current+" AND(User_Id = " + con->user->id + " OR user_id IS NULL)"));
+				// nie dziala
+				con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, nazwa, content, IsPublic, IsImportant FROM Notes WHERE folder_id ="+folder->current+" AND(User_Id = " + con->user->id + " OR user_id IS NULL)")); // nie dziala
 			}
 			
 			StandardNote^ note = gcnew StandardNote();
@@ -480,11 +491,12 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 				note->is_Public = con->res->getInt("IsPublic");
 				String^ _public = note->is_Public == 1 ? "publiczna" : "prywatna";
 				note->is_Important = con->res->getInt("IsImportant");
-				this->lbNotesBox->Items->Add(note->Nazwa + " " + _public); // + "," + note->is_Public ? "publiczna": "prywatna"
+				this->lbNotesBox->Items->Add(note->id + "  " +note->Nazwa + " " + _public); // + "," + note->is_Public ? "publiczna": "prywatna"
 			}
 			
 		}
 
+			   //selecting folders, getting into them
 private: System::Void lbFolderBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	
 	String^ Item =  this->lbFolderBox->SelectedItem->ToString();
@@ -508,6 +520,52 @@ private: System::Void lbFolderBox_SelectedIndexChanged(System::Object^ sender, S
 		fillComboFolders(_nb);
 	}
 	
+}
+	   //selectiong notes, appearing them in rtbNote
+private: System::Void lbNotesBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	String^ Item = this->lbNotesBox->SelectedItem->ToString();
+	Item = Item->Substring(0, 2);
+	con->res = con->stmt->executeQuery(Conversion::cli2std("SELECT Id, nazwa, content, IsPublic, IsImportant FROM Notes WHERE Id = " + Item + ";"));
+	StandardNote^ note = gcnew StandardNote();
+	con->res->next();
+	note->zawartosc = Conversion::std2cli(con->res->getString("content"));
+	note->Nazwa = Conversion::std2cli(con->res->getString("nazwa"));
+	this->rtbNote->Text = note->zawartosc;
+	this->gbNote->Text = note->Nazwa;
+	
+}
+	   //clear
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (
+		MessageBox::Show(
+			L"Are you sure you want to do this?",
+			L"Continue?",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Exclamation
+		) == System::Windows::Forms::DialogResult::Yes)
+	{
+		this->rtbNote->Text = "";
+	}
+}
+	   //update note from bottom box
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (
+		MessageBox::Show(
+			L"Are you sure you want to do this?",
+			L"Continue?",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Exclamation
+		) == System::Windows::Forms::DialogResult::Yes)
+	{
+		String^ content = this->rtbNote->Text;
+		
+		String^ Item = this->lbNotesBox->SelectedItem->ToString();
+		Item = Item->Substring(0, 2);
+		con->stmt->execute(Conversion::cli2std("UPDATE `Notes` SET `Content` = '" + content + "' WHERE `Notes`.`Id` = "+ Item+";"));
+		
+		LoadNotes();
+
+	}
 }
 };
 }
